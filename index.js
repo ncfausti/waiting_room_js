@@ -99,7 +99,12 @@ function formatTime(floor, now, ceiling) {
 
     // minutesFloor < 1hr ahead, hoursCeiling < 1 hr ahead
     if (minutesFloor < 60 && minutesCeiling < 60) {
-      return [fmtMinutes(minutesFloor), fmtMinutes(minutesCeiling)].join("-");
+      const lowerStr = fmtMinutes(minutesFloor);
+      // remove first 'm'
+      return [
+        lowerStr.slice(0, lowerStr.length - 1),
+        fmtMinutes(minutesCeiling),
+      ].join("-");
     }
   }
 }
