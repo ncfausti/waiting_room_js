@@ -98,7 +98,7 @@ function formatTime(floor, now, ceiling) {
     }
 
     // minutesFloor < 1hr ahead, hoursCeiling < 1 hr ahead
-    if (minutesFloor < 60 && minutesCeiling < 60) {
+    if (minutesFloor <= 60 && minutesCeiling <= 60) {
       const lowerStr = fmtMinutes(minutesFloor);
       // remove first 'm'
       return [
